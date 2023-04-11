@@ -40,10 +40,24 @@ export const JourneyPicker = ({ onJourneyChange }) => {
   
   const handleSubmit =(event)=>{
     event.preventDefault();
-    console.log(fromCity, toCity, date);
+    
+    fetch (`https://apps.kodim.cz/daweb/leviexpress/api/journey?fromCity=${fromCity}&toCity=${toCity}&date=${date}`)
+    .then((response) => response.json())
+    .then((data) => onJourneyChange(data.results))
+  
   }
   
-useEffect(()=>{
+  
+  
+  
+  
+  const submitDisabled = fromCity === '' || toCity === '' || date === ''
+ 
+
+
+
+
+  useEffect(()=>{
   fetch ("https://apps.kodim.cz/daweb/leviexpress/api/cities")
       .then((response) => response.json())
       .then((data) => {
@@ -100,6 +114,7 @@ return <div className="journey-picker container">
         </label>
         <div className="journey-picker__controls">
           <button 
+            disabled = {submitDisabled}
             className="btn" 
             type="submit"
             
