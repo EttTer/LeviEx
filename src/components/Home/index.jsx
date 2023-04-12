@@ -5,7 +5,7 @@ import { SelectedSeat } from '../SelectedSeat';
 import { useNavigate } from 'react-router-dom';
 
 export const Home = () => {
-const [journey,setJourney]=useState("null") 
+const [journey,setJourney]=useState(null) 
 const navigate = useNavigate();
   
 
@@ -44,7 +44,7 @@ return (
         </>
       }
   </main>
-);
+)
 
-}
+};
 
