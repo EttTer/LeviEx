@@ -1,16 +1,20 @@
 import React from "react";
 import "./style.css"
 import { Seat } from "../Seat";
+import { SeatRow } from "../SeatRow";
 
-export const SeatPicker = ()=> {
+
+export const SeatPicker = ({seats, journeyId})=> {
+    console.log(seats)
     return (<>
     
 
   <div className="seat-picker container">
     <h2>Vyberte sedadlo</h2>
     <div className="seats">
-     <Seat number= "1"/> 
-     <Seat number= "5"/> 
+
+        {seats.map((seat, index)=> <SeatRow key={index} row={seat}/>)}
+    
       <div className="seat-row">
   
       </div>

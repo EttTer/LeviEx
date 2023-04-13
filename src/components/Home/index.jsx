@@ -14,6 +14,8 @@ const handleJourneyChange=(detail)=>{
  setJourney(detail)
 }
 
+console.log(journey)
+
 const handleBuy = ()  => {
   fetch(`https://apps.kodim.cz/daweb/leviexpress/api/reservation`, {
     method: 'POST',
@@ -37,7 +39,7 @@ return (
     {journey === null ? null :
         <>
           <JourneyDetail journey={journey} />
-          <SeatPicker/>
+          <SeatPicker seats={journey.seats} journeyId={journey.journeyIdn}/>
 
           <div className="controls container">
             <button onClick={() => handleBuy()} className="btn btn--big" type="button">Rezervovat</button>
