@@ -7,6 +7,13 @@ import {SeatPicker} from "../SeatPicker";
 
 export const Home = () => {
 const [journey,setJourney]=useState(null) 
+const [userSeat,setUserSeat]=useState(null)
+
+const handleOnSeatSelected = () => {
+  setUserSeat();
+};
+
+
 const navigate = useNavigate();
   
 
@@ -24,7 +31,7 @@ const handleBuy = ()  => {
     },
     body: JSON.stringify({
       action: 'create',
-      seat: journey.autoSeat,
+      seat: userSeat,
       journeyId: journey.journeyId,
     }),
   })
@@ -39,7 +46,7 @@ return (
     {journey === null ? null :
         <>
           <JourneyDetail journey={journey} />
-          <SeatPicker seats={journey.seats} journeyId={journey.journeyIdn} selectedSeat={journey.autoSeat}/>
+          <SeatPicker seats={journey.seats} journeyId={journey.journeyIdn} selectedSeat={userSeat} onSeatSelected= {setUserSeat}/>
 
           <div className="controls container">
             <button onClick={() => handleBuy()} className="btn btn--big" type="button">Rezervovat</button>
