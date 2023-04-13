@@ -39,7 +39,7 @@ return (
     {journey === null ? null :
         <>
           <JourneyDetail journey={journey} />
-          <SeatPicker seats={journey.seats} journeyId={journey.journeyIdn}/>
+          <SeatPicker seats={journey.seats} journeyId={journey.journeyIdn} selectedSeat={journey.autoSeat}/>
 
           <div className="controls container">
             <button onClick={() => handleBuy()} className="btn btn--big" type="button">Rezervovat</button>

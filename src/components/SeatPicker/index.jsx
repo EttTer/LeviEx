@@ -4,7 +4,7 @@ import { Seat } from "../Seat";
 import { SeatRow } from "../SeatRow";
 
 
-export const SeatPicker = ({seats, journeyId})=> {
+export const SeatPicker = ({seats, journeyId, selectedSeat})=> {
     console.log(seats)
     return (<>
     
@@ -13,7 +13,7 @@ export const SeatPicker = ({seats, journeyId})=> {
     <h2>Vyberte sedadlo</h2>
     <div className="seats">
 
-        {seats.map((seat, index)=> <SeatRow key={index} row={seat}/>)}
+        {seats.map((seat, index)=> <SeatRow key={index} row={seat} rowSelectedSeat={selectedSeat}/>)}
     
       <div className="seat-row">
   

@@ -17,10 +17,12 @@ const testRow = [
     },
   ];
 
-export const SeatRow=({row})=>{
+export const SeatRow=({row, rowSelectedSeat})=>{
     console.log(row)
+
+  
     return (  <div className="seat-row">
-    {row.map((test)=><Seat key={test.number} number={test.number} isOccupied={test.isOccupied}/>)
+    {row.map((test)=><Seat key={test.number} number={test.number} isOccupied={test.isOccupied}  isSelected={rowSelectedSeat === test.number}/>)
     }
 
 
