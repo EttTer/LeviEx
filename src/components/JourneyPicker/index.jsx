@@ -48,14 +48,8 @@ export const JourneyPicker = ({ onJourneyChange }) => {
   }
   
   
-  
-  
-  
   const submitDisabled = fromCity === '' || toCity === '' || date === ''
  
-
-
-
 
   useEffect(()=>{
   fetch ("https://apps.kodim.cz/daweb/leviexpress/api/cities")
