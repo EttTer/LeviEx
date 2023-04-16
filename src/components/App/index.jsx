@@ -1,11 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import { Footer } from '../Footer';
-import { Header } from '../Header';
-import { Home } from '../Home';
-import { Reservation } from '../Reservation';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-
+import { Footer } from "../Footer";
+import { Header } from "../Header";
+import { Home } from "../Home";
+import { Reservation } from "../Reservation";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 export const App = () => (
   <>
@@ -26,12 +25,12 @@ const ErrorPage = () => {
 
 const router = createBrowserRouter([
   {
-    path: '/', 
+    path: "/",
     element: <Home />,
-    errorElement: <ErrorPage />
+    errorElement: <ErrorPage />,
   },
   {
-    path: '/reservation/:reservationId',
-    element: <Reservation />
-  }
-])
+    path: "/reservation/:reservationId",
+    element: <Reservation />,
+  },
+]);
